@@ -1,5 +1,3 @@
-BandDataPipeline
-
 ## Descrição do Projeto
 O projeto é uma extração de dados conforme um arquivo TXT com nome de bandas para consulta no Spotify. Na consulta, são obtidos o gênero, nome da banda, popularidade e os 10 sons mais populares da banda. Após isso, os dados são gravados em um arquivo, lidos com o Flume e publicados em tópicos do Kafka com filtro através do gênero.
 
