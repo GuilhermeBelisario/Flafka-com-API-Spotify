@@ -1,0 +1,29 @@
+Inicializando:
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+Criando Topicos:
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Metal
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Sertanejo
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Pagode
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Pop
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Kpop
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic Rock
+
+
+Vendo se os Tópicos foram Criados:
+
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+.\bin\windows\kafka-console-consumer.bat.bat --bootstrap-server localhost:9092 --topic Metal --from-beginning
+
+
