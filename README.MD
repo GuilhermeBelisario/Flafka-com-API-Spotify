@@ -6,7 +6,7 @@ O projeto é uma extração de dados conforme um arquivo TXT com nome de bandas 
 - Consultar informações no Spotify.
 - Gravar os dados em um arquivo JSON ou TXT.
 - Ler o arquivo com o Flume.
-- Publicar os dados em tópicos do Kafka com filtro por gênero.
+- Enviar os dados em tópicos do Kafka com filtro por gênero.
 
 ## Funcionalidades
 - Leitura de arquivo TXT com nomes de bandas.
@@ -23,11 +23,12 @@ O projeto é uma extração de dados conforme um arquivo TXT com nome de bandas 
 - `kafka/`: Configurações e scripts do Apache Kafka.
 
 ## Requisitos
+- Sistema Operacional: Windows 10 (Uso a Versão Pro)
 - Python 3.12.3 (Uso essa versão)
 - Bibliotecas Python: `requests`, `json`, `os`,`spotipy`, etc.
 - Conta de desenvolvedor no Spotify e credenciais da API.
 - Apache Flume
-- Apache Kafka
+- Apache Kafka_2.13-3.7.0
 
 ## Uso
 1. Adicione nomes de bandas ao arquivo `data/bandas.txt` ou adaptar para usar INPUT ou outra forma de entrada dos nomes.
