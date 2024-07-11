@@ -35,3 +35,5 @@ O projeto é uma extração de dados conforme um arquivo TXT com nome de bandas 
 
 ## Contribuições
 Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull request para melhorias, correções e sugestões!
+Observação:
+Caso consigam algum suporte para melhoria do scrip do flume, estou aceitando pois estou testando ainda!
