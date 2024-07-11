@@ -1,0 +1,41 @@
+agent.sources = band-source
+agent.sinks = Rock-sk Kpop-sk
+agent.channels = Rock-ch Kpop-ch
+
+agent.sources.band-source.type = spooldir
+agent.sources.band-source.spoolDir = C:\Users\Guilherme Belisario\Desktop\Workplace\Flafka-com-API-Spotify\bandas\
+agent.sources.band-source.basenameHeader = true
+
+agent.sources.band-source.fileHeader = true
+agent.sources.band-source.channels = Rock-ch Kpop-ch
+
+# Configuração do multiplexing channel selector
+agent.sources.band-source.selector.type = multiplexing
+agent.sources.band-source.selector.header = Rock
+agent.sources.band-source.selector.mapping.log = Rock-ch
+agent.sources.band-source.selector.default = Rock-ch
+agent.sources.band-source.deletePolicy = immediate
+
+# Configuração dos canais
+agent.channels.Rock-ch.type = memory
+agent.channels.Rock-ch.capacity = 1000
+agent.channels.Rock-ch.transactionCapacity = 100
+
+agent.channels.Kpop-ch.type = memory
+agent.channels.Kpop-ch.capacity = 1000
+agent.channels.Kpop-ch.transactionCapacity = 100
+
+# Configuração dos sinks
+agent.sinks.Rock-sk.type = org.apache.flume.sink.kafka.KafkaSink
+agent.sinks.Rock-sk.channel = Rock-ch
+agent.sinks.Rock-sk.kafka.bootstrap.servers = kafka-broker1:9092,kafka-broker2:9092
+agent.sinks.Rock-sk.kafka.topic = Rock
+agent.sinks.Rock-sk.kafka.flumeBatchSize = 20
+agent.sinks.Rock-sk.kafka.producer.acks = 1
+
+agent.sinks.Kpop-sk.type = org.apache.flume.sink.kafka.KafkaSink
+agent.sinks.Kpop-sk.channel = Kpop-ch
+agent.sinks.Kpop-sk.kafka.bootstrap.servers = kafka-broker1:9092,kafka-broker2:9092
+agent.sinks.Kpop-sk.kafka.topic = Kpop
+agent.sinks.Kpop-sk.kafka.flumeBatchSize = 20
+agent.sinks.Kpop-sk.kafka.producer.acks = 1
